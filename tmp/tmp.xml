@@ -1,0 +1,236 @@
+<SubDiagramNodeDataDO objid="202">
+      <ArchivedPublishState>-1</ArchivedPublishState>
+      <CampaignId>DGFDZTZFNBHPVLG2</CampaignId>
+      <CodeChangeUnpublished>false</CodeChangeUnpublished>
+      <CodeEverBeenPublished>false</CodeEverBeenPublished>
+      <ControlKey>0</ControlKey>
+      <DateModified>13.05.21 14:57</DateModified>
+      <DroppedCount>-1</DroppedCount>
+      <ExcludeFlag>false</ExcludeFlag>
+      <ExcludeIconPath></ExcludeIconPath>
+      <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
+      <IconHtmlPath>sap-icon://hc/link</IconHtmlPath>
+      <IconPath>res/Link.gif</IconPath>
+      <InputNodes ListTypes="String">AABBC0MTEVAES5DE</InputNodes>
+      <Label>Subdiagram</Label>
+      <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
+      <Loading>false</Loading>
+      <NeedToPersist>true</NeedToPersist>
+      <NodeDescription></NodeDescription>
+      <NodeId>EADCLERNRNHQTPES</NodeId>
+      <NodeName>RESULT_CHECKS</NodeName>
+      <NodeState>100</NodeState>
+      <NodeTags EmptyList="true"></NodeTags>
+      <NodeType>55</NodeType>
+      <OldVersionNumber></OldVersionNumber>
+      <OutputNodes ListTypes="String">BEAASKT5CNAFREW3</OutputNodes>
+      <Persisting>false</Persisting>
+      <PublishState>2</PublishState>
+      <RefreshNodeDataDO>false</RefreshNodeDataDO>
+      <SortByList EmptyList="true"></SortByList>
+      <Splitters EmptyList="true"></Splitters>
+      <SubdiagramEvent ConcreteClass="com.sas.analytics.crm.flow.inbound.client.EventDataDO" objid="203">
+        <ArchivedPublishState>-1</ArchivedPublishState>
+        <Attachments>false</Attachments>
+        <CodeChangeUnpublished>false</CodeChangeUnpublished>
+        <CodeEverBeenPublished>false</CodeEverBeenPublished>
+        <ComplexType>false</ComplexType>
+        <DateModified>10.05.21 17:14</DateModified>
+        <DefaultTimeout>-1</DefaultTimeout>
+        <Description>&#1059;&#1087;&#1088;&#1072;&#1074;&#1083;&#1103;&#1102;&#1097;&#1077;&#1077; &#1089;&#1086;&#1073;&#1099;&#1090;&#1080;&#1077; &#1076;&#1080;&#1072;&#1075;&#1088;&#1072;&#1084;&#1084;&#1099; &#1086;&#1087;&#1088;&#1077;&#1076;&#1077;&#1083;&#1077;&#1085;&#1080;&#1103; &#1088;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;&#1072; &#1074;&#1089;&#1077;&#1081; &#1089;&#1090;&#1088;&#1072;&#1090;&#1077;&#1075;&#1080;&#1080;</Description>
+        <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
+        <ForceOverwrite>false</ForceOverwrite>
+        <Forced>false</Forced>
+        <Hidden>false</Hidden>
+        <Id>AABH10NOENEAQMDZ</Id>
+        <IdentifiersRemoved EmptyList="true"></IdentifiersRemoved>
+        <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
+        <Loading>false</Loading>
+        <LockedBy></LockedBy>
+        <MetadataType>Group</MetadataType>
+        <Name>HACK1_CHECKS_event</Name>
+        <NeedToPersist>false</NeedToPersist>
+        <NoWritePermission>false</NoWritePermission>
+        <OldVersionNumber></OldVersionNumber>
+        <PersistState>persistStateOK</PersistState>
+        <Persisting>false</Persisting>
+        <PhysicalName>HACK1_CHECKS_event</PhysicalName>
+        <PublishState>2</PublishState>
+        <RdmDateModified>2021-05-10T14:14:49.680Z</RdmDateModified>
+        <ReadOnly>false</ReadOnly>
+        <ReplyVars>
+          <IBVariableDO ConcreteClass="com.sas.analytics.crm.flow.inbound.client.IBVariableDO" listpos="1" objid="204">
+            <ArchivedPublishState>-1</ArchivedPublishState>
+            <Attachments>false</Attachments>
+            <CodeChangeUnpublished>false</CodeChangeUnpublished>
+            <CodeEverBeenPublished>false</CodeEverBeenPublished>
+            <ContainsAllPossibleValues>false</ContainsAllPossibleValues>
+            <DefaultValueIsMissing>false</DefaultValueIsMissing>
+            <Description>&#1056;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090; &#1088;&#1072;&#1073;&#1086;&#1090;&#1099; &#1076;&#1080;&#1072;&#1075;&#1088;&#1072;&#1084;&#1084;&#1099;</Description>
+            <ErrorValue ConcreteClass="com.sas.analytics.crm.flow.inbound.client.IBVariableValueDO" objid="205">
+              <ArchivedPublishState>-1</ArchivedPublishState>
+              <CodeChangeUnpublished>false</CodeChangeUnpublished>
+              <CodeEverBeenPublished>false</CodeEverBeenPublished>
+              <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
+              <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
+              <Loading>false</Loading>
+              <LongValue>-2</LongValue>
+              <NeedToPersist>false</NeedToPersist>
+              <OldVersionNumber></OldVersionNumber>
+              <Persisting>false</Persisting>
+              <PublishState>2</PublishState>
+              <Type>5</Type>
+              <VersionNumber>6.6</VersionNumber>
+            </ErrorValue>
+            <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
+            <ForceOverwrite>false</ForceOverwrite>
+            <Forced>false</Forced>
+            <Hidden>false</Hidden>
+            <HideVariable>false</HideVariable>
+            <Id></Id>
+            <IdentifiersRemoved EmptyList="true"></IdentifiersRemoved>
+            <Level>Nominal</Level>
+            <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
+            <Loading>false</Loading>
+            <LockedBy></LockedBy>
+            <MetadataType>Group</MetadataType>
+            <Name>RESULT</Name>
+            <NeedToPersist>false</NeedToPersist>
+            <NoWritePermission>false</NoWritePermission>
+            <OldVersionNumber></OldVersionNumber>
+            <PersistState>persistStateOK</PersistState>
+            <Persisting>false</Persisting>
+            <PhysicalName>RESULT</PhysicalName>
+            <PresentInDS2Code>false</PresentInDS2Code>
+            <ProcessVariableName>_SRPLY_EADCLERNRNHQTPES_RESULT_V3YFVN_N</ProcessVariableName>
+            <PublishState>2</PublishState>
+            <ReadOnly>false</ReadOnly>
+            <Required>false</Required>
+            <Selected>true</Selected>
+            <Shared>false</Shared>
+            <SharedIn EmptyList="true"></SharedIn>
+            <TestVarInfoId></TestVarInfoId>
+            <Type>0</Type>
+            <TypeDescription>integer</TypeDescription>
+            <VersionNumber>6.6</VersionNumber>
+            <WhereClauseOp>0</WhereClauseOp>
+            <WhoModified></WhoModified>
+          </IBVariableDO>
+        </ReplyVars>
+        <RequestVars>
+          <IBVariableDO ConcreteClass="com.sas.analytics.crm.flow.inbound.client.IBVariableDO" listpos="1" objid="206">
+            <ArchivedPublishState>-1</ArchivedPublishState>
+            <Attachments>false</Attachments>
+            <CodeChangeUnpublished>false</CodeChangeUnpublished>
+            <CodeEverBeenPublished>false</CodeEverBeenPublished>
+            <ContainsAllPossibleValues>false</ContainsAllPossibleValues>
+            <DefaultValueIsMissing>false</DefaultValueIsMissing>
+            <Description>&#1048;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1090;&#1086;&#1088; &#1079;&#1072;&#1087;&#1091;&#1089;&#1082;&#1072; &#1089;&#1090;&#1088;&#1072;&#1090;&#1077;&#1075;&#1080;&#1080;</Description>
+            <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
+            <ForceOverwrite>false</ForceOverwrite>
+            <Forced>false</Forced>
+            <Hidden>false</Hidden>
+            <HideVariable>false</HideVariable>
+            <Id></Id>
+            <IdentifiersRemoved EmptyList="true"></IdentifiersRemoved>
+            <Level>Nominal</Level>
+            <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
+            <Loading>false</Loading>
+            <LockedBy></LockedBy>
+            <MetadataType>Group</MetadataType>
+            <Name>RUN ID</Name>
+            <NeedToPersist>false</NeedToPersist>
+            <NoWritePermission>false</NoWritePermission>
+            <OldVersionNumber></OldVersionNumber>
+            <PersistState>persistStateOK</PersistState>
+            <Persisting>false</Persisting>
+            <PhysicalName>RUN_ID</PhysicalName>
+            <PresentInDS2Code>false</PresentInDS2Code>
+            <ProcessVariableName>_SRQST_EADCLERNRNHQTPES_RUN_ID_UVA0PC_N</ProcessVariableName>
+            <PublishState>2</PublishState>
+            <ReadOnly>false</ReadOnly>
+            <Required>false</Required>
+            <Selected>true</Selected>
+            <Shared>false</Shared>
+            <SharedIn EmptyList="true"></SharedIn>
+            <TestVarInfoId></TestVarInfoId>
+            <Type>0</Type>
+            <TypeDescription>integer</TypeDescription>
+            <Value ConcreteClass="com.sas.analytics.crm.flow.inbound.client.IBVariableValueDO" objid="207">
+              <ArchivedPublishState>-1</ArchivedPublishState>
+              <CodeChangeUnpublished>false</CodeChangeUnpublished>
+              <CodeEverBeenPublished>false</CodeEverBeenPublished>
+              <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
+              <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
+              <Loading>false</Loading>
+              <NeedToPersist>false</NeedToPersist>
+              <OldVersionNumber></OldVersionNumber>
+              <Persisting>false</Persisting>
+              <PublishState>2</PublishState>
+              <Type>11</Type>
+              <ValueTypeVarInfoDO ConcreteClass="com.sas.analytics.crm.flow.inbound.client.ValueTypeVarInfoDO" objid="208">
+                <ArchivedPublishState>-1</ArchivedPublishState>
+                <CodeChangeUnpublished>false</CodeChangeUnpublished>
+                <CodeEverBeenPublished>false</CodeEverBeenPublished>
+                <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
+                <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
+                <Loading>false</Loading>
+                <NeedToPersist>false</NeedToPersist>
+                <OldVersionNumber></OldVersionNumber>
+                <Persisting>false</Persisting>
+                <PublishState>2</PublishState>
+                <VarInfoArray>false</VarInfoArray>
+                <VarInfoId>events.RUN ID</VarInfoId>
+                <VarInfoName>RUN ID</VarInfoName>
+                <VarInfoPhysicalName>RUN_ID</VarInfoPhysicalName>
+                <VarInfoSource>Request</VarInfoSource>
+                <VarInfoSourceName>HACK1_MAIN_event</VarInfoSourceName>
+                <VarInfoSubtype>Integer</VarInfoSubtype>
+                <VarInfoType>Numeric</VarInfoType>
+                <VersionNumber>6.6</VersionNumber>
+              </ValueTypeVarInfoDO>
+              <VersionNumber>6.6</VersionNumber>
+            </Value>
+            <VersionNumber>6.6</VersionNumber>
+            <WhereClauseOp>0</WhereClauseOp>
+            <WhoModified></WhoModified>
+          </IBVariableDO>
+        </RequestVars>
+        <Shared>false</Shared>
+        <SharedIn EmptyList="true"></SharedIn>
+        <Timeout>-1</Timeout>
+        <TimeoutEnabled>false</TimeoutEnabled>
+        <Type>1</Type>
+        <TypeDescription>string</TypeDescription>
+        <VersionNumber>6.6</VersionNumber>
+        <WhoModified>SAS Demo User</WhoModified>
+      </SubdiagramEvent>
+      <SubdiagramFolder ConcreteClass="com.sas.analytics.crm.ma.client.FolderDO" objid="209">
+        <ArchivedPublishState>-1</ArchivedPublishState>
+        <CodeChangeUnpublished>false</CodeChangeUnpublished>
+        <CodeEverBeenPublished>false</CodeEverBeenPublished>
+        <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
+        <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
+        <Loading>false</Loading>
+        <Name></Name>
+        <NeedToPersist>false</NeedToPersist>
+        <OldVersionNumber></OldVersionNumber>
+        <Owner></Owner>
+        <ParentFolder>HACK</ParentFolder>
+        <Persisting>false</Persisting>
+        <PublishState>2</PublishState>
+        <VersionNumber>6.6</VersionNumber>
+      </SubdiagramFolder>
+      <SubdiagramId>BBEEK5UJFVGRTPER</SubdiagramId>
+      <SubdiagramName>HACK1_RESULT_CHECKS</SubdiagramName>
+      <SubjectID>sAsSubjectNotDefined</SubjectID>
+      <TotalCount>0</TotalCount>
+      <ValidInputSubject>sAsSubjectNotDefined</ValidInputSubject>
+      <ValidOutputSubject>SASSubjectMatchesInput</ValidOutputSubject>
+      <VersionNumber>6.6</VersionNumber>
+      <X>480</X>
+      <Y>416</Y>
+      <SystemExtraValues>
+        <OutputNodeName>B_ERROR2</OutputNodeName>
+      </SystemExtraValues>
+    </SubDiagramNodeDataDO>
