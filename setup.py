@@ -5,10 +5,10 @@ from pkg_resources import parse_requirements
 from setuptools import setup, find_packages
 
 
-module_name = 'gpbhack_not_set'
+module_name = 'rtdm_analyze'
 
 module = spec_from_file_location(
-    module_name, os.path.join('code', '__init__.py')
+    module_name, os.path.join('rtdm_analyze', '__init__.py')
 ).loader.load_module(module_name)
 
 

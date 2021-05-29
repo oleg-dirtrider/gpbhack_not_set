@@ -2,9 +2,10 @@ import logging
 from typing import Union, Optional
 from xml.dom import minidom
 
-from code.utils import Config
-from code.xml_fetcher import SshXmlFetcher
 from sas_objects import Campaign, Block, DataProcess
+from utils import Config
+from visualizer import CampaignVisualizer, ProcessVisualizer
+from xml_fetcher import SshXmlFetcher
 
 log = logging.getLogger(__name__)
 
@@ -14,11 +15,17 @@ class XmlParser:
 
     AVAILABLE_BLOCK_TYPES = ('SubDiagramNodeDataDO', 'ProcessNodeDataDO')
 
-    def __init__(self, filepath: str, config: Config):
+    def __init__(self,
+                 filepath: str,
+                 config: Config,
+                 subdiagram: bool = False):
         """
         :param filepath: Путь к XML-файлу
+        :param config: Конфигурация утилиты
+        :param subdiagram: Парсим ли сабдиаграмму
         """
         self.config = config
+        self.subdiagram = subdiagram
 
         self._dom = minidom.parse(filepath)
         self._dom.normalize()
@@ -35,6 +42,11 @@ class XmlParser:
         self._parse_campaigns()
         self._parse_blocks()
         self._remove_duplicates()
+
+        # Визуализируем результат только на самом верхнем уровне.
+        if not self.subdiagram:
+            self._visualize_result()
+
         return self._result
 
     def _remove_duplicates(self) -> None:
@@ -123,7 +135,8 @@ class XmlParser:
         """
         xml_filepath = SshXmlFetcher(campaign_name=subdiagram_name,
                                      config=self.config).run()
-        parsed_xml = XmlParser(xml_filepath, self.config).run()
+        parsed_xml = XmlParser(xml_filepath, self.config, subdiagram=True)\
+            .run()
         for k in self._result.keys():
             self._result[k].extend(parsed_xml.get(k, []))
         return [i.id for i in parsed_xml.get('data_processes', [])]
@@ -176,3 +189,8 @@ class XmlParser:
 
         self._result['data_processes'].append(data_process)
         return data_process.id
+
+    def _visualize_result(self) -> None:
+        """Визуализируй результат."""
+        CampaignVisualizer(self._result).run()
+        ProcessVisualizer(self._result).run()

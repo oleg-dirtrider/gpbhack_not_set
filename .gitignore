@@ -130,5 +130,9 @@ dmypy.json
 
 .idea
 /task_rtdm/
-/code/tmp/*.xml
-/code/tmp/*.txt
+/rtdm_analyze/tmp/*.xml
+/rtdm_analyze/tmp/*.txt
+/rtdm_analyze/visualized_results/campaigns/*.pdf
+/rtdm_analyze/visualized_results/campaigns/*.gv
+/rtdm_analyze/visualized_results/data_processes/*.pdf
+/rtdm_analyze/visualized_results/data_processes/*.gv
