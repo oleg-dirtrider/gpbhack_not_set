@@ -90,14 +90,14 @@ class DBRunner:
             session.add(row_instance)
             session.flush()
             data_process_dict[row_instance.sas_data_process_id] = row_instance.id
-        for row in data["CampaignBlock"]:
-            row_instance = DataProcess(
+        for row in data["blocks"]:
+            row_instance = CampaignBlock(
                 sas_block_id=row.id,
                 block_name=row.name,
                 block_type=row.type,
                 subdiagram_id=row.subdiagram_id,
                 campaign_id=campaign_dict[row.campaign_id],
-                data_process_id=data_process_dict[row.data_process_id]
+                data_process_id=data_process_dict.get(row.data_process_id, 1)
             )
             session.add(row_instance)
             session.flush()

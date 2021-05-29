@@ -13,9 +13,8 @@ class Block:
     id: str
     name: str
     type: str
-    subdiagram_id: str
     campaign_id: str
-    data_process_id: Optional[str] = None
+    data_process_id_list: list
     subdiagram_id: Optional[str] = None
     subdiagram_name: Optional[str] = None
 
