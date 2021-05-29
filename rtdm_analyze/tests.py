@@ -1,9 +1,9 @@
 import logging
 import sys
 
-from rtdm_analyze.visualizer import CampaignVisualizer, ProcessVisualizer
 from sas_objects import Block, Campaign, DataProcess
 from utils import ConfigReader
+from visualizer import CampaignVisualizer, ProcessVisualizer
 from xml_fetcher import SshXmlFetcher
 from xml_parser import XmlParser
 
