@@ -12,14 +12,15 @@ class Block:
     id: str
     name: str
     type: str
+    subdiagram_id: str
     campaign_id: str
+    data_process_id: str
+
 
 
 @dataclass
 class DataProcess:
     id: str
     name: str
-    block_id: str
-    subdiagram_id: str
     lib_name: str
     table_name: str
