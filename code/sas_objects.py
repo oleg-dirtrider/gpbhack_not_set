@@ -13,6 +13,7 @@ class Block:
     id: str
     name: str
     type: str
+    subdiagram_id: str
     campaign_id: str
     data_process_id: Optional[str] = None
     subdiagram_id: Optional[str] = None
