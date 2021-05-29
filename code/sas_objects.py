@@ -14,13 +14,14 @@ class Block:
     name: str
     type: str
     campaign_id: str
+    data_process_id: Optional[str] = None
     subdiagram_id: Optional[str] = None
+    subdiagram_name: Optional[str] = None
 
 
 @dataclass
 class DataProcess:
     id: str
     name: str
-    block_id: str
     lib_name: str
     table_name: str

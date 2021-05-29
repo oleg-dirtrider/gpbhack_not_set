@@ -1,5 +1,5 @@
 import logging
-from typing import Union
+from typing import Union, Optional
 from xml.dom import minidom
 
 from sas_objects import Campaign, Block, DataProcess
@@ -68,7 +68,8 @@ class XmlParser:
                 block = Block(id='',
                               name='',
                               type=block_type,
-                              campaign_id=self._campaign_id)
+                              campaign_id=self._campaign_id,
+                              data_process_id='')
                 for node in block_node.childNodes:
                     if node.nodeName == 'NodeId':
                         block.id = node.childNodes[0].nodeValue
@@ -76,23 +77,31 @@ class XmlParser:
                     if node.nodeName == 'NodeName':
                         block.name = node.childNodes[0].nodeValue
                         continue
-                    if block_type == 'SubDiagramNodeDataDO' and \
-                            node.nodeName == 'SubdiagramId':
-                        block.subdiagram_id = node.childNodes[0].nodeValue
+                    if block_type == 'SubDiagramNodeDataDO':
+                        if node.nodeName == 'SubdiagramId':
+                            block.subdiagram_id = node.childNodes[0].nodeValue
+                            continue
+                        if node.nodeName == 'SubdiagramName':
+                            block.subdiagram_name = \
+                                node.childNodes[0].nodeValue
+
+                block.data_process_id = self._parse_data_process(
+                    block_type=block_type,
+                    block_node=block_node,
+                    block_id=block.id
+                )
                 self._result['blocks'].append(block)
-                self._parse_data_process(block_type=block_type,
-                                         block_node=block_node,
-                                         block_id=block.id)
 
     def _parse_data_process(self,
                             block_type: str,
                             block_node: minidom.Element,
-                            block_id: str) -> None:
+                            block_id: str) -> Optional[str]:
         """
         Спарси дата-процесс.
         :param block_type: Тип блока
         :param block_node: Нода блока, в которую входит дата-процесс
         :param block_id: Идентификатор блока
+        :return: Id дата-процесса
         """
         # У сабдиаграммы нет дата-процессов.
         if block_type == 'SubDiagramNodeDataDO':
@@ -109,7 +118,6 @@ class XmlParser:
 
         data_process = DataProcess(id='',
                                    name='',
-                                   block_id=block_id,
                                    lib_name='',
                                    table_name='')
 
@@ -131,3 +139,4 @@ class XmlParser:
                 data_process.table_name = node.childNodes[0].nodeValue
 
         self._result['data_processes'].append(data_process)
+        return data_process.id
