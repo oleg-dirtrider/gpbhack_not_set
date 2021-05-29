@@ -43,7 +43,7 @@
           "{data_class_instance}", 
            ...
         ],
-        "data_process": [
+        "data_processes": [
           "{data_class_instance}", 
            ...
         ]

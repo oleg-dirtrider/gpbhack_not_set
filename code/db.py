@@ -80,7 +80,7 @@ class DBRunner:
             session.add(row_instance)
             session.flush()
             campaign_dict[row_instance.sas_campaign_id] = row_instance.id
-        for row in data["data_process"]:
+        for row in data["data_processes"]:
             row_instance = DataProcess(
                 sas_data_process_id=row.id,
                 data_process_name=row.name,
