@@ -1,3 +1,5 @@
+import os
+
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Table
 from sqlalchemy.orm import registry, relationship, Session
 
@@ -5,12 +7,18 @@ from sqlalchemy.orm import registry, relationship, Session
 mapper_registry = registry()
 Base = mapper_registry.generate_base()
 
-# mapper_registry.metadata.create_all(engine)
 
 SCHEMA = "RTDM_TECH"
 
-db_url = "mssql+pyodbc://Team8:Team81!ijn@c2-185-12-28-165.elastic.cloud.croc.ru:1433/db_Team8?" \
-         "driver=SQL+Server+Native+Client+11.0"
+db_url = os.getenv("RTDM_ANALYZER_DB_URL")
+
+
+campaigns_blocks_data_processes_association_table = Table(
+    'campaigns_blocks_data_processes_association', mapper_registry.metadata,
+    Column('campaign_block', Integer, ForeignKey(f'{SCHEMA}.campaigns_blocks.id'), nullable=False),
+    Column('data_process', Integer, ForeignKey(f'{SCHEMA}.data_processes.id'), nullable=False),
+    schema=SCHEMA
+)
 
 
 class Campaign(Base):
@@ -38,7 +46,7 @@ class CampaignBlock(Base):
     campaign_id = Column(Integer, ForeignKey(f'{SCHEMA}.campaigns.id'), nullable=False)
     campaign = relationship("Campaign", back_populates="campaigns_blocks")
     data_processes = relationship(
-        "DataProcess", secondary="campaigns_blocks_data_processes_association_table", back_populates='campaigns_blocks'
+        "DataProcess", secondary=campaigns_blocks_data_processes_association_table, back_populates='campaigns_blocks'
     )
 
     def __repr__(self):
@@ -54,7 +62,7 @@ class DataProcess(Base):
     lib_name = Column(String)
     table_name = Column(String)
     campaigns_blocks = relationship(
-        "CampaignBlock", secondary="campaigns_blocks_data_processes_association_table", back_populates="data_processes"
+        "CampaignBlock", secondary=campaigns_blocks_data_processes_association_table, back_populates="data_processes"
     )
 
     def __repr__(self):
@@ -62,18 +70,24 @@ class DataProcess(Base):
                f"data_process_name={self.data_process_name!r})"
 
 
-campaigns_blocks_data_processes_association_table = Table(
-    'campaigns_blocks_data_processes_association', mapper_registry.metadata,
-    Column('campaign_block', Integer, ForeignKey(f'{SCHEMA}.campaigns_blocks.id'), nullable=False),
-    Column('data_process', Integer, ForeignKey(f'{SCHEMA}.data_processes.id'), nullable=False),
-    schema=SCHEMA
-)
-
-
 class DBRunner:
     def __init__(self, connection_string: str = db_url) -> None:
         self.connection_string = connection_string
-        self.engine = create_engine(self.connection_string, echo=True, future=True)
+        self.engine = create_engine(self.connection_string, future=True)
+        self.clear_tables()
+        #mapper_registry.metadata.create_all(self.engine)
+
+    def clear_tables(self):
+        sql = """
+            delete from RTDM_TECH.campaigns_blocks_data_processes_association;
+            delete from RTDM_TECH.data_processes;
+            delete from RTDM_TECH.campaigns_blocks;
+            delete from RTDM_TECH.campaigns;
+        """
+        session = Session(self.engine)
+        session.execute(sql)
+        session.commit()
+        session.close()
 
     def insert_data(self, data: dict):
         session = Session(self.engine)
@@ -99,6 +113,7 @@ class DBRunner:
             session.add(row_instance)
             session.flush()
             block_dict[row_instance] = row.data_process_id_list
+        data_process_list = []
         for row in data["data_processes"]:
             row_instance = DataProcess(
                 sas_data_process_id=row.id,
@@ -106,13 +121,12 @@ class DBRunner:
                 lib_name=row.lib_name,
                 table_name=row.table_name
             )
-            session.add(row_instance)
-            session.flush()
+            data_process_campaign_block = []
             for campaign_block_instance, data_processes_id_list in block_dict.items():
-                data_process_campaign_block = []
                 if row_instance.sas_data_process_id in data_processes_id_list:
                     data_process_campaign_block.append(campaign_block_instance)
-            session.add(row_instance)
-            session.flush()
+            row_instance.campaigns_blocks = data_process_campaign_block
+            data_process_list.append(row_instance)
+        session.add_all(data_process_list)
         session.commit()
         session.close()

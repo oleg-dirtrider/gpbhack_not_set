@@ -1,9 +1,9 @@
 import logging
 import sys
 
-from code.utils import ConfigReader
-from code.xml_fetcher import SshXmlFetcher
-from code.xml_parser import XmlParser
+from utils import ConfigReader
+from xml_fetcher import SshXmlFetcher
+from xml_parser import XmlParser
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 

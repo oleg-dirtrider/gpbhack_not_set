@@ -2,8 +2,8 @@ import logging
 from typing import Union, Optional
 from xml.dom import minidom
 
-from code.utils import Config
-from code.xml_fetcher import SshXmlFetcher
+from utils import Config
+from xml_fetcher import SshXmlFetcher
 from sas_objects import Campaign, Block, DataProcess
 
 log = logging.getLogger(__name__)
