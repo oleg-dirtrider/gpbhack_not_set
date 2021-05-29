@@ -1,7 +1,10 @@
 import logging
+import os
 from typing import Union, Optional
 from xml.dom import minidom
 
+from code.utils import Config
+from code.xml_fetcher import SshXmlFetcher
 from sas_objects import Campaign, Block, DataProcess
 
 log = logging.getLogger(__name__)
@@ -12,10 +15,12 @@ class XmlParser:
 
     AVAILABLE_BLOCK_TYPES = ('SubDiagramNodeDataDO', 'ProcessNodeDataDO')
 
-    def __init__(self, filepath: str):
+    def __init__(self, filepath: str, config: Config):
         """
         :param filepath: Путь к XML-файлу
         """
+        self.config = config
+
         self._dom = minidom.parse(filepath)
         self._dom.normalize()
 
@@ -69,7 +74,7 @@ class XmlParser:
                               name='',
                               type=block_type,
                               campaign_id=self._campaign_id,
-                              data_process_id='')
+                              data_process_id_list=[])
                 for node in block_node.childNodes:
                     if node.nodeName == 'NodeId':
                         block.id = node.childNodes[0].nodeValue
@@ -85,12 +90,32 @@ class XmlParser:
                             block.subdiagram_name = \
                                 node.childNodes[0].nodeValue
 
-                block.data_process_id = self._parse_data_process(
-                    block_type=block_type,
-                    block_node=block_node,
-                    block_id=block.id
-                )
-                self._result['blocks'].append(block)
+                if block_type == 'SubDiagramNodeDataDO':
+                    self._parse_subdiagram_block(block.subdiagram_name)
+                else:
+                    block.data_process_id_list.append(
+                        self._parse_data_process(
+                            block_type=block_type,
+                            block_node=block_node,
+                            block_id=block.id
+                        )
+                    )
+                    self._result['blocks'].append(block)
+
+    def _parse_subdiagram_block(self, subdiagram_name: str):
+        """
+        Спарси блок сабдиаграм.
+        :param subdiagram_name: Название сабдиаграмы
+        """
+        # xml_filepath = SshXmlFetcher(campaign_name=subdiagram_name,
+        #                              config=self.config).run()
+
+        xml_filepath = (f'/Users/dirtrider/Documents/python_projects/gpbhack_not_set/code/tmp/campaign_{subdiagram_name.lower()}.xml')
+
+        parsed_xml = XmlParser(xml_filepath, self.config).run()
+        self._result['campaigns'].extend(parsed_xml.get('campaigns', []))
+        print(f'Сабдиаграмма {subdiagram_name}:')
+        print(parsed_xml)
 
     def _parse_data_process(self,
                             block_type: str,
