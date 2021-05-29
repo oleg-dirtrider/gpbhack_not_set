@@ -1,5 +1,4 @@
 import logging
-import os
 from typing import Union, Optional
 from xml.dom import minidom
 
@@ -35,7 +34,19 @@ class XmlParser:
         """Запуск парсера."""
         self._parse_campaigns()
         self._parse_blocks()
+        self._remove_duplicates()
         return self._result
+
+    def _remove_duplicates(self) -> None:
+        """Удали дубликаты."""
+        for entity in ('campaigns', 'data_processes',):
+            used_ids = set()
+            cleaned_entities = []
+            for elem in self._result[entity]:
+                if elem.id not in used_ids:
+                    cleaned_entities.append(elem)
+                    used_ids.add(elem.id)
+            self._result[entity] = cleaned_entities
 
     def _parse_campaigns(self) -> None:
         """Спарси кампанию."""
@@ -91,7 +102,9 @@ class XmlParser:
                                 node.childNodes[0].nodeValue
 
                 if block_type == 'SubDiagramNodeDataDO':
-                    self._parse_subdiagram_block(block.subdiagram_name)
+                    block.data_process_id_list.extend(
+                        self._parse_subdiagram_block(block.subdiagram_name)
+                    )
                 else:
                     block.data_process_id_list.append(
                         self._parse_data_process(
@@ -100,22 +113,20 @@ class XmlParser:
                             block_id=block.id
                         )
                     )
-                    self._result['blocks'].append(block)
+                self._result['blocks'].append(block)
 
-    def _parse_subdiagram_block(self, subdiagram_name: str):
+    def _parse_subdiagram_block(self, subdiagram_name: str) -> list[str]:
         """
-        Спарси блок сабдиаграм.
-        :param subdiagram_name: Название сабдиаграмы
+        Спарси блок сабдиаграмм.
+        :param subdiagram_name: Название сабдиаграммы
+        :return: Список идентификаторов всех дата-процессов сабдиаграммы
         """
-        # xml_filepath = SshXmlFetcher(campaign_name=subdiagram_name,
-        #                              config=self.config).run()
-
-        xml_filepath = (f'/Users/dirtrider/Documents/python_projects/gpbhack_not_set/code/tmp/campaign_{subdiagram_name.lower()}.xml')
-
+        xml_filepath = SshXmlFetcher(campaign_name=subdiagram_name,
+                                     config=self.config).run()
         parsed_xml = XmlParser(xml_filepath, self.config).run()
-        self._result['campaigns'].extend(parsed_xml.get('campaigns', []))
-        print(f'Сабдиаграмма {subdiagram_name}:')
-        print(parsed_xml)
+        for k in self._result.keys():
+            self._result[k].extend(parsed_xml.get(k, []))
+        return [i.id for i in parsed_xml.get('data_processes', [])]
 
     def _parse_data_process(self,
                             block_type: str,
@@ -126,7 +137,7 @@ class XmlParser:
         :param block_type: Тип блока
         :param block_node: Нода блока, в которую входит дата-процесс
         :param block_id: Идентификатор блока
-        :return: Id дата-процесса
+        :return: Идентификатор дата-процесса
         """
         # У сабдиаграммы нет дата-процессов.
         if block_type == 'SubDiagramNodeDataDO':
