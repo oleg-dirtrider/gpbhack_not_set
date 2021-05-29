@@ -23,7 +23,9 @@ class ConfigReader:
 
     def __init__(self) -> None:
         self.config = Config(
-            **self.read_yaml_config(filepath=CONFIG_FILEPATH)
+            **self.read_yaml_config(filepath=CONFIG_FILEPATH),
+            sas_password=os.getenv('SAS_PASSWORD'),
+            ssh_sas_password=os.getenv('SSH_SAS_PASSWORD')
         )
 
     @staticmethod

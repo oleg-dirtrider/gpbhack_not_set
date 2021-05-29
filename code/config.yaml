@@ -1,11 +1,11 @@
 # Подключение к SAS
+# Так же необходимо задать переменную окружения SAS_PASSWORD
 sas_user: "cisample@saspw"
-sas_password: "Orion123"
 sas_auth_type: "AuthDomain"
 sas_ci_business_space: "HACK"
 
 # Подключение к серверу с SAS
+# Так же необходимо задать переменную окружения SSH_SAS_PASSWORD
 ssh_sas_host: '217.73.58.177'
 ssh_sas_port: 22
 ssh_sas_user: 'sas'
-ssh_sas_password: '#Orion123_'

@@ -130,3 +130,5 @@ dmypy.json
 
 .idea
 /task_rtdm/
+/code/tmp/*.xml
+/code/tmp/*.txt
