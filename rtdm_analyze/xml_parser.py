@@ -214,7 +214,7 @@ class XmlParser:
     ) -> list[dict[str, str]]:
         """
         Получи колонки таблицы дата-процесса.
-        :param input_variables_nodes: Ноды InpitVariables дата-процесса
+        :param input_variables_nodes: Ноды InputVariables дата-процесса
         """
         columns = []
         for input_variable in input_variables_nodes:
