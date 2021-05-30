@@ -26,7 +26,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     config = ConfigReader().config
-    xml_fetcher = XmlFetcher(args.campaign_name, config) if args.local else SshXmlFetcher(args.campaign_name, config)
+    xml_fetcher = XmlFetcher(args.campaign_name, config) if \
+        args.local else SshXmlFetcher(args.campaign_name, config)
     xml_file_path = xml_fetcher.run()
     xml_parser = XmlParser(xml_file_path, config, local=args.local)
     data_for_db = xml_parser.run()
