@@ -132,6 +132,7 @@ dmypy.json
 /task_rtdm/
 /rtdm_analyze/tmp/*.xml
 /rtdm_analyze/tmp/*.txt
+!/rtdm_analyze/tmp/MetaDataObjects.txt
 /rtdm_analyze/visualized_results/campaigns/*.pdf
 /rtdm_analyze/visualized_results/campaigns/*.gv
 /rtdm_analyze/visualized_results/data_processes/*.pdf
