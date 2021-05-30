@@ -2,6 +2,7 @@ import logging
 import sys
 
 from sas_objects import Block, Campaign, DataProcess
+from unused_processes import LogsParser
 from utils import ConfigReader
 from visualizer import CampaignVisualizer, ProcessVisualizer
 from xml_fetcher import SshXmlFetcher
@@ -151,7 +152,16 @@ def test_visualize():
     ProcessVisualizer(test_data).run()
 
 
+def test_log_parser():
+    process_names = LogsParser(
+        '/Users/dirtrider/Documents/python_projects/gpbhack_not_set/'
+        'rtdm_analyze/tmp/MetaDataObjects.txt'
+    ).run()
+    print(process_names)
+
+
 if __name__ == '__main__':
     # test_xml_fetcher()
-    test_xml_parser()
+    # test_xml_parser()
     # test_visualize()
+    test_log_parser()
