@@ -25,3 +25,4 @@ class DataProcess:
     name: str
     lib_name: str
     table_name: str
+    columns: list[dict[str, str]]

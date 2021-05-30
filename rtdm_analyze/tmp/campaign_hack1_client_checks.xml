@@ -3128,7 +3128,11 @@
         <PublishState>2</PublishState>
         <VersionNumber>6.6</VersionNumber>
       </ImportDetails>
+<<<<<<< HEAD
       <LastModDate>30.05.21 12:53</LastModDate>
+=======
+      <LastModDate>30.05.21 14:50</LastModDate>
+>>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
       <LastModUser>Customer Intelligence Sample User(cisample)</LastModUser>
       <LayoutDirection>RIGHT</LayoutDirection>
       <LiveCount>-1</LiveCount>
@@ -4539,7 +4543,11 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>NO_ERROR_DOCS</GroupName>
+<<<<<<< HEAD
           <LineItemId>BECCGDMHTVFVUS4Q</LineItemId>
+=======
+          <LineItemId>ACEFLLGNLRCFWFAN</LineItemId>
+>>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
@@ -4565,7 +4573,11 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>ERROR_DOCS</GroupName>
+<<<<<<< HEAD
           <LineItemId>GDDAXAE0GRHUVAUR</LineItemId>
+=======
+          <LineItemId>FDGDMWYHLVFKWPI3</LineItemId>
+>>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
@@ -4740,7 +4752,11 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>NO_ADDREESS_ERROR</GroupName>
+<<<<<<< HEAD
           <LineItemId>AHCHBZVJOBBTR0EJ</LineItemId>
+=======
+          <LineItemId>DEEEWZCTTZGAVN0O</LineItemId>
+>>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
@@ -4766,7 +4782,11 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>ERROR_ADDRESS</GroupName>
+<<<<<<< HEAD
           <LineItemId>FEGE4545RFE1QKX4</LineItemId>
+=======
+          <LineItemId>EHHF4CCFEVHMV3YQ</LineItemId>
+>>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>

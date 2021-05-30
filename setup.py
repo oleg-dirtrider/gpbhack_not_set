@@ -27,7 +27,7 @@ setup(
     author_email=module.__email__,
     description=module.__doc__,
     long_description=open('README.md').read(),
-    url='https://github.com/vasyanch/gpbhack_not_set/tree/main/code',
+    url='https://github.com/vasyanch/gpbhack_not_set',
     platforms='all',
     python_requires='>=3.9',
     packages=find_packages(),
