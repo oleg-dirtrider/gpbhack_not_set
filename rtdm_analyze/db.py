@@ -151,7 +151,7 @@ class DBRunner:
         for data_process in data_procces_list:
             db_column_names = self.get_columns_of_table(data_process.table_name)
             for d_p_col in data_process.columns:
-                if d_p_col not in db_column_names:
+                if d_p_col["name"] not in db_column_names:
                     table_dict[data_process.name] = (data_process.table_name, d_p_col)
 
         return table_dict
