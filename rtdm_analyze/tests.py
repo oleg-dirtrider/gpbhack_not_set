@@ -3,7 +3,7 @@ import os
 import sys
 
 from sas_objects import Block, Campaign, DataProcess
-from unused_processes import LogsParser
+from unused_processes import UnusedProcessFinder
 from utils import ConfigReader
 from visualizer import CampaignVisualizer, ProcessVisualizer
 from xml_fetcher import SshXmlFetcher
@@ -14,6 +14,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 CONFIG = ConfigReader().config
 
 os.environ["PATH"] += os.pathsep + 'С:/Program Files/Graphviz/bin/'
+
 
 def test_xml_fetcher():
     ssh_fetcher = SshXmlFetcher(campaign_name='HACK1_MAIN',
@@ -155,15 +156,15 @@ def test_visualize():
 
 
 def test_log_parser():
-    process_names = LogsParser(
+    result = UnusedProcessFinder(
         '/Users/dirtrider/Documents/python_projects/gpbhack_not_set/'
         'rtdm_analyze/tmp/MetaDataObjects.txt'
     ).run()
-    print(process_names)
+    print(result)
 
 
 if __name__ == '__main__':
-    # test_xml_fetcher()
-    # test_xml_parser()
-    # test_visualize()
+    test_xml_fetcher()
+    test_xml_parser()
+    test_visualize()
     test_log_parser()

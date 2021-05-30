@@ -1,4 +1,5 @@
 paramiko~=2.7.2
 pyyaml~=5.4.1
-SQLAlchemy~=1.4.16
+SQLAlchemy~=1.4.17
+pyodbc~=4.0.30
 graphviz~=0.16
