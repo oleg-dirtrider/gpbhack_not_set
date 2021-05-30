@@ -1,0 +1,22 @@
+// HACK1_MAIN analysis
+digraph {
+	0 [label="Campaign \"HACK1_MAIN\""]
+	5 [label="DataProcess \"READ_DOCUMENT_v2\""]
+	6 [label="DataProcess \"READ_ADDRESS_v2\""]
+	7 [label="DataProcess \"READ_INCOME\""]
+	8 [label="DataProcess \"INS_CHECK\""]
+	9 [label="DataProcess \"READ_DOCUMENT_v1\""]
+	10 [label="DataProcess \"READ_ADDRESS\""]
+	11 [label="DataProcess \"CLIENT_v2\""]
+	12 [label="DataProcess \"READ_DOCUMENT\""]
+	13 [label="DataProcess \"CLIENT\""]
+	0 -> 5
+	0 -> 6
+	0 -> 7
+	0 -> 8
+	0 -> 9
+	0 -> 10
+	0 -> 11
+	0 -> 12
+	0 -> 13
+}

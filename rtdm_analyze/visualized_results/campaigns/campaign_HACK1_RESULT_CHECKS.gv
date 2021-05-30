@@ -1,0 +1,10 @@
+// HACK1_RESULT_CHECKS analysis
+digraph {
+	1 [label="Campaign \"HACK1_RESULT_CHECKS\""]
+	5 [label="DataProcess \"READ_DOCUMENT_v2\""]
+	6 [label="DataProcess \"READ_ADDRESS_v2\""]
+	7 [label="DataProcess \"READ_INCOME\""]
+	1 -> 5
+	1 -> 6
+	1 -> 7
+}
