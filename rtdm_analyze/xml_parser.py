@@ -5,7 +5,7 @@ from xml.dom import minidom
 from sas_objects import Campaign, Block, DataProcess
 from utils import Config
 from visualizer import CampaignVisualizer, ProcessVisualizer
-from xml_fetcher import SshXmlFetcher
+from xml_fetcher import SshXmlFetcher, XmlFetcher
 
 log = logging.getLogger(__name__)
 
@@ -18,12 +18,14 @@ class XmlParser:
     def __init__(self,
                  filepath: str,
                  config: Config,
-                 subdiagram: bool = False):
+                 subdiagram: bool = False,
+                 local: bool = False):
         """
         :param filepath: Путь к XML-файлу
         :param config: Конфигурация утилиты
         :param subdiagram: Парсим ли сабдиаграмму
         """
+        self.local = local
         self.config = config
         self.subdiagram = subdiagram
 
@@ -45,7 +47,10 @@ class XmlParser:
 
         # Визуализируем результат только на самом верхнем уровне.
         if not self.subdiagram:
-            self._visualize_result()
+            try:
+                self._visualize_result()
+            except Exception as e:
+                log.error(f"Failed to visualize graph due to error: {e}")
 
         return self._result
 
@@ -133,8 +138,12 @@ class XmlParser:
         :param subdiagram_name: Название сабдиаграммы
         :return: Список идентификаторов всех дата-процессов сабдиаграммы
         """
-        xml_filepath = SshXmlFetcher(campaign_name=subdiagram_name,
-                                     config=self.config).run()
+        if self.local:
+            xml_filepath = XmlFetcher(campaign_name=subdiagram_name,
+                                      config=self.config).run()
+        else:
+            xml_filepath = SshXmlFetcher(campaign_name=subdiagram_name,
+                                         config=self.config).run()
         parsed_xml = XmlParser(xml_filepath, self.config, subdiagram=True)\
             .run()
         for k in self._result.keys():

@@ -6,7 +6,7 @@ import sys
 from db import DBRunner
 from unused_processes import UnusedProcessFinder
 from utils import ConfigReader
-from xml_fetcher import SshXmlFetcher
+from xml_fetcher import SshXmlFetcher, XmlFetcher
 from xml_parser import XmlParser
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
@@ -22,14 +22,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('campaign_name', type=str)
     parser.add_argument('--export-package-log-file', type=str)
-
+    parser.add_argument("-l", "--local", dest="local", action="store_true")
     args = parser.parse_args()
+
     config = ConfigReader().config
-
-    xml_fetcher = SshXmlFetcher(args.campaign_name, config)
+    xml_fetcher = XmlFetcher(args.campaign_name, config) if args.local else SshXmlFetcher(args.campaign_name, config)
     xml_file_path = xml_fetcher.run()
-    xml_parser = XmlParser(xml_file_path, config)
-
+    xml_parser = XmlParser(xml_file_path, config, local=args.local)
     data_for_db = xml_parser.run()
     db_runner = DBRunner()
     db_runner.clear_tables()
