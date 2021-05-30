@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 
 from sas_objects import Block, Campaign, DataProcess
@@ -12,6 +13,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 CONFIG = ConfigReader().config
 
+os.environ["PATH"] += os.pathsep + 'С:/Program Files/Graphviz/bin/'
 
 def test_xml_fetcher():
     ssh_fetcher = SshXmlFetcher(campaign_name='HACK1_MAIN',
