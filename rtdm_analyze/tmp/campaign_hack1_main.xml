@@ -3160,11 +3160,7 @@
         <PublishState>2</PublishState>
         <VersionNumber>6.6</VersionNumber>
       </ImportDetails>
-<<<<<<< HEAD
-      <LastModDate>30.05.21 12:53</LastModDate>
-=======
-      <LastModDate>30.05.21 14:49</LastModDate>
->>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
+      <LastModDate>30.05.21 16:02</LastModDate>
       <LastModUser>Customer Intelligence Sample User(cisample)</LastModUser>
       <LayoutDirection>RIGHT</LayoutDirection>
       <LiveCount>-1</LiveCount>
@@ -4495,11 +4491,7 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>-2 - ERROR</GroupName>
-<<<<<<< HEAD
-          <LineItemId>FECFJQDWURHZSDCQ</LineItemId>
-=======
-          <LineItemId>DAFCHQZOENEGSJQ4</LineItemId>
->>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
+          <LineItemId>DGHALSL3BRDMXUGV</LineItemId>
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
@@ -4525,11 +4517,7 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>NO ERRORS</GroupName>
-<<<<<<< HEAD
-          <LineItemId>BCHDBNM24ZGOVXU3</LineItemId>
-=======
-          <LineItemId>GHCBOF0XZVEWTI0L</LineItemId>
->>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
+          <LineItemId>HFAAHA3BHBCRQ402</LineItemId>
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
@@ -4704,11 +4692,7 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>0, &#1041;&#1077;&#1079; &#1086;&#1096;&#1080;&#1073;&#1086;&#1082;-1</GroupName>
-<<<<<<< HEAD
-          <LineItemId>CBHFBGMQTFDMSLLC</LineItemId>
-=======
-          <LineItemId>DHGCNMMFEFG0QGCX</LineItemId>
->>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
+          <LineItemId>HHGGKQ4TMZGSQKLY</LineItemId>
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
@@ -4734,11 +4718,7 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>CLIENT_CH_ERROR</GroupName>
-<<<<<<< HEAD
-          <LineItemId>GFDCEHH1ZFF2TGNX</LineItemId>
-=======
-          <LineItemId>AGCAJCZYNNG0SIUR</LineItemId>
->>>>>>> 2cd9ff2333ba5c264cc0e0b47b90de2f6bcf0ff6
+          <LineItemId>AECGANWFLVGKUDNN</LineItemId>
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>

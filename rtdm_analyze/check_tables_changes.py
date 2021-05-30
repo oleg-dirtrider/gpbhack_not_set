@@ -26,4 +26,5 @@ if __name__ == "__main__":
     xml_parser = XmlParser(xml_file_path, config, local=args.local)
     data_processes = xml_parser.run().get('data_processes')
 
-    DBRunner().check(data_processes)
+    from pprint import pprint
+    pprint(DBRunner().check(data_processes))
