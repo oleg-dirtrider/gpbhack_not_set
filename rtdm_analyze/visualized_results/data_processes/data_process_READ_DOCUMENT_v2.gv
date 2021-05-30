@@ -1,0 +1,8 @@
+// READ_DOCUMENT_v2 analysis
+digraph {
+	5 [label="DataProcess \"READ_DOCUMENT_v2\""]
+	0 [label="Campaign \"HACK1_MAIN\""]
+	1 [label="Campaign \"HACK1_RESULT_CHECKS\""]
+	5 -> 1
+	5 -> 0
+}

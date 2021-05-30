@@ -1,0 +1,12 @@
+// HACK1_ADDRESS_CHECKS analysis
+digraph {
+	3 [label="Campaign \"HACK1_ADDRESS_CHECKS\""]
+	8 [label="DataProcess \"INS_CHECK\""]
+	9 [label="DataProcess \"READ_DOCUMENT_v1\""]
+	10 [label="DataProcess \"READ_ADDRESS\""]
+	11 [label="DataProcess \"CLIENT_v2\""]
+	3 -> 8
+	3 -> 9
+	3 -> 10
+	3 -> 11
+}

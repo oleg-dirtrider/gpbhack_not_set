@@ -1,0 +1,8 @@
+// READ_INCOME analysis
+digraph {
+	7 [label="DataProcess \"READ_INCOME\""]
+	0 [label="Campaign \"HACK1_MAIN\""]
+	1 [label="Campaign \"HACK1_RESULT_CHECKS\""]
+	7 -> 1
+	7 -> 0
+}

@@ -1,0 +1,12 @@
+// INS_CHECK analysis
+digraph {
+	8 [label="DataProcess \"INS_CHECK\""]
+	0 [label="Campaign \"HACK1_MAIN\""]
+	2 [label="Campaign \"HACK1_CLIENT_CHECKS\""]
+	3 [label="Campaign \"HACK1_ADDRESS_CHECKS\""]
+	4 [label="Campaign \"HACK1_DOC_CHECKS\""]
+	8 -> 3
+	8 -> 2
+	8 -> 4
+	8 -> 0
+}
