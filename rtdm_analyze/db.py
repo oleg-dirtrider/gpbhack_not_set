@@ -135,3 +135,23 @@ class DBRunner:
         session.add_all(data_process_list)
         session.commit()
         session.close()
+
+    def get_columns_of_table(self, table_name: str):
+        sql = F"""
+            select t.name table_name, c.name column_name 
+            from sys.tables t join sys.columns c on t.object_id = c.object_id
+            where t.name = '{table_name}';
+        """
+        session = Session(self.engine)
+        result = session.execute(sql)
+        return [row[1] for row in result]
+
+    def check(self, data_procces_list: list):
+        table_dict = {}
+        for data_process in data_procces_list:
+            db_column_names = self.get_columns_of_table(data_process.table_name)
+            for d_p_col in data_process.columns:
+                if d_p_col not in db_column_names:
+                    table_dict[data_process.name] = (data_process.table_name, d_p_col)
+
+        return table_dict
