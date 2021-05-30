@@ -177,7 +177,8 @@ class XmlParser:
         data_process = DataProcess(id='',
                                    name='',
                                    lib_name='',
-                                   table_name='')
+                                   table_name='',
+                                   columns=[])
 
         # Процесс в блоке может быть только один.
         for node in process_nodes[0].childNodes:
@@ -195,9 +196,43 @@ class XmlParser:
                 continue
             if node.nodeName == 'TableName':
                 data_process.table_name = node.childNodes[0].nodeValue
+                continue
+            if node.nodeName == 'InputVariableList':
+                data_process.columns.extend(
+                    self._get_data_process_columns(
+                        input_variables_nodes=node.getElementsByTagName(
+                            'IBVariableDO')
+                    )
+                )
 
         self._result['data_processes'].append(data_process)
         return data_process.id
+
+    @staticmethod
+    def _get_data_process_columns(
+            input_variables_nodes: list[minidom.Element]
+    ) -> list[dict[str, str]]:
+        """
+        Получи колонки таблицы дата-процесса.
+        :param input_variables_nodes: Ноды InpitVariables дата-процесса
+        """
+        columns = []
+        for input_variable in input_variables_nodes:
+            column_data = {
+                'name': None,
+                'type_description': None
+            }
+            for node in input_variable.childNodes:
+                if column_data['name'] and column_data['type_description']:
+                    break
+                if node.nodeName == 'Name':
+                    column_data['name'] = node.childNodes[0].nodeValue
+                    continue
+                if node.nodeName == 'TypeDescription':
+                    column_data['type_description'] = \
+                        node.childNodes[0].nodeValue
+            columns.append(column_data)
+        return columns
 
     def _visualize_result(self) -> None:
         """Визуализируй результат."""

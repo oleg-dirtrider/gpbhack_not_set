@@ -3160,7 +3160,7 @@
         <PublishState>2</PublishState>
         <VersionNumber>6.6</VersionNumber>
       </ImportDetails>
-      <LastModDate>30.05.21 11:29</LastModDate>
+      <LastModDate>30.05.21 14:49</LastModDate>
       <LastModUser>Customer Intelligence Sample User(cisample)</LastModUser>
       <LayoutDirection>RIGHT</LayoutDirection>
       <LiveCount>-1</LiveCount>
@@ -4491,7 +4491,7 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>-2 - ERROR</GroupName>
-          <LineItemId>BBHDN5KD5RGHUS0T</LineItemId>
+          <LineItemId>DAFCHQZOENEGSJQ4</LineItemId>
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
@@ -4517,7 +4517,7 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>NO ERRORS</GroupName>
-          <LineItemId>EHDGF3N1YRAFVD4L</LineItemId>
+          <LineItemId>GHCBOF0XZVEWTI0L</LineItemId>
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
@@ -4692,7 +4692,7 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>0, &#1041;&#1077;&#1079; &#1086;&#1096;&#1080;&#1073;&#1086;&#1082;-1</GroupName>
-          <LineItemId>GBCDOO15TRGGXKPI</LineItemId>
+          <LineItemId>DHGCNMMFEFG0QGCX</LineItemId>
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
@@ -4718,7 +4718,7 @@
           <ControlGroup>false</ControlGroup>
           <FirstOccurrenceToPublish>1</FirstOccurrenceToPublish>
           <GroupName>CLIENT_CH_ERROR</GroupName>
-          <LineItemId>DGCBNZ44SVHOXOZB</LineItemId>
+          <LineItemId>AGCAJCZYNNG0SIUR</LineItemId>
           <LoadedFromOldDavLocation>false</LoadedFromOldDavLocation>
           <Loading>false</Loading>
           <NeedToPersist>false</NeedToPersist>
