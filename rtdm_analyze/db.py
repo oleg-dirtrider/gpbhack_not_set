@@ -74,7 +74,6 @@ class DBRunner:
     def __init__(self, connection_string: str = db_url) -> None:
         self.connection_string = connection_string
         self.engine = create_engine(self.connection_string, future=True)
-        self.clear_tables()
         #mapper_registry.metadata.create_all(self.engine)
 
     def clear_tables(self):
@@ -88,6 +87,12 @@ class DBRunner:
         session.execute(sql)
         session.commit()
         session.close()
+
+    def get_all_data_processes(self):
+        session = Session(self.engine)
+        data_processes_list = [data_process.data_process_name for data_process in session.query(DataProcess).all()]
+        session.close()
+        return data_processes_list
 
     def insert_data(self, data: dict):
         session = Session(self.engine)
